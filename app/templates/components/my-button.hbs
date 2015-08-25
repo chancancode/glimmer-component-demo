@@ -1,1 +1,7 @@
-<button class="btn btn-lg btn-primary btn-block" type="submit" role="button">{{yield}}</button>
+<button class="btn btn-lg btn-primary btn-block {{if isSubmitting 'disabled'}}" type="submit" role="button">
+  {{#if isSubmitting}}
+    Sending...
+  {{else}}
+    {{yield}}
+  {{/if}}
+</button>
